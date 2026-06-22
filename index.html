@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>IEEE Ignite 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!--navigation bar-->
+<nav class="navbar" id="navbar">
+  <a href="#home" class="nav-logo">
+    <span class="logo-ieee">IEEE</span><span class="logo-ignite">Ignite</span>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#home" class="nav-link active">Home</a></li>
+    <li><a href="#about" class="nav-link">About IEEE</a></li>
+    <li><a href="#events" class="nav-link">Events</a></li>
+    <li><a href="#schedule" class="nav-link">Schedule</a></li>
+    <li><a href="#faq" class="nav-link">FAQ</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </button>
+</nav>
+<!--home body-->
+<section id="home" class="home">
+  <canvas id="particleCanvas"></canvas>
+  <div class="home-glow home-glow-1"></div>
+  <div class="home-glow home-glow-2"></div>
+  <div class="home-content">
+    <h1 class="home-title">
+      <span class="title-line">IGNITE</span>
+      <span class="title-year">2026</span>
+    </h1>
+    <p class="tagline">Sparking Innovation. <span class="accent">Building Futures.</span></p>
+    <div class="hero-meta">
+      <span class="box"> 📍 LBS Institute of Technology for Women, Trivandrum</span>
+      <span class="box"> 📅 July 2026</span>
+    </div>
+    <p class="home-desc">
+      A flagship technical event that brings together brilliant minds for two days of workshops,
+      competitions, networking, and innovation - designed to ignite your potential.
+    </p>
+    <div class="home-buttons">
+      <a href="#events" class="btn btn-primary">Explore Events</a>
+      <a class="btn btn-outline">Register Now </a>
+    </div>
+  </div>
+
+</section>
+<!-- about body-->
+<section id="about" class="section">
+  <div class="section-inner">
+    <div class="section-tag"> About</div>
+    <h2 class="section-title">About <span class="accent">IEEE Ignite</span></h2>
+    <div class="about-grid">
+      <div class="about-card reveal">
+        <h3>About IEEE</h3>
+        <p>The Institute of Electrical and Electronics Engineers (IEEE) is the world's largest technical professional organization dedicated to advancing technology for humanity. With 400,000+ members in 160+ countries, IEEE shapes the future of tech.</p>
+        <a href="https://www.ieee.org"  class="about-link">Visit IEEE.org</a>
+      </div>
+      <div class="about-card reveal">
+        <h3>IEEE SB . LBSITW</h3>
+        <p>The IEEE Student Branch at LBS Institute of Technology for Women is a vibrant community of future engineers committed to learning, collaborating, and growing together through innovative events.</p>
+      </div>
+      <div class="about-card reveal">
+        <h3>IEEE Ignite</h3>
+        <p>IEEE Ignite is our flagship annual event - a two-day celebration of technology, creativity, and professional development. We empower students to spark their potential and shape tomorrow's innovations.</p>
+        <div class="objective-pills">
+          <span class="pill">Learn</span>
+          <span class="pill">Innovate</span>
+          <span class="pill">Collaborate</span>
+          <span class="pill">Grow</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- events body-->
+<section id="events" class="section section-dark">
+  <div class="section-inner">
+    <div class="section-tag">Events</div>
+    <h2 class="section-title">Event <span class="accent">Lineup</span></h2>
+    <div class="search-bar-wrap reveal">
+      <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search events by name...">
+        <button class="search-clear" id="resetBtn" title="Clear">x</button>
+      </div>
+    </div>
+    <div class="filters reveal">
+      <button class="filter-btn active" onclick="filterEvents('all', this)"> All</button>
+      <button class="filter-btn technical-btn" onclick="filterEvents('technical', this)">Technical</button>
+      <button class="filter-btn professional-btn" onclick="filterEvents('professional', this)">Professional</button>
+      <button class="filter-btn interactive-btn" onclick="filterEvents('interactive', this)">Interactive</button>
+    </div>
+    <div class="event-grid" id="eventGrid">
+      <div class="event-card technical reveal" data-name="web development workshop">
+        <div class="card-badge technical-badge">Technical</div>
+    
+        <h3>Web Development Workshop</h3>
+        <p>Build responsive, modern web apps from scratch. Covers HTML, CSS, JavaScript, and frameworks.</p>
+        <div class="card-footer">
+          <span class="card-tag"> ⏱️ 3 hrs</span>
+          <span class="card-tag"> 👥 Beginner</span>
+        </div>
+      </div>
+      <div class="event-card technical reveal" data-name="ai machine learning session">
+        <div class="card-badge technical-badge">Technical</div>
+        <h3>AI & ML Session</h3>
+        <p>Explore fundamentals of Artificial Intelligence and Machine Learning through hands-on projects.</p>
+        <div class="card-footer">
+          <span class="card-tag"> ⏱️ 4 hrs</span>
+          <span class="card-tag"> 👥 Intermediate</span>
+        </div>
+      </div>
+      <div class="event-card technical reveal" data-name="coding challenge">
+        <div class="card-badge technical-badge">Technical</div>
+        <h3>Coding Challenge</h3>
+        <p>A competitive programming contest testing DSA, logic, and problem-solving skills under time pressure.</p>
+        <div class="card-footer">
+          <span class="card-tag"> ⏱️ 2 hrs</span>
+          <span class="card-tag"> 👥 Beginner</span>
+        </div>
+      </div>
+      <div class="event-card professional reveal" data-name="resume building">
+        <div class="card-badge professional-badge">Professional</div>
+        <h3>Resume Building</h3>
+        <p>Craft an ATS-friendly resume with expert guidance from industry professionals and alumni.</p>
+        <div class="card-footer">
+          <span class="card-tag"> ⏱️ 2 hrs</span>
+          <span class="card-tag"> 👥 All Levels</span>
+        </div>
+      </div>
+      <div class="event-card professional reveal" data-name="linkedin networking workshop">
+        <div class="card-badge professional-badge">Professional</div>
+    
+        <h3>LinkedIn & Networking</h3>
+        <p>Optimize your LinkedIn profile and master professional networking for career growth and visibility.</p>
+        <div class="card-footer">
+          <span class="card-tag"> ⏱️ 1.5 hrs</span>
+          <span class="card-tag"> 👥 All Levels</span>
+        </div>
+      </div>
+      <div class="event-card professional reveal" data-name="career guidance talk">
+        <div class="card-badge professional-badge">Professional</div>
+        <h3>Career Guidance Talk</h3>
+        <p>Industry experts share insights on career paths, internships, higher studies, and opportunities.</p>
+        <div class="card-footer">
+          <span class="card-tag"> ⏱️ 1 hr</span>
+          <span class="card-tag"> 👥 Talk</span>
+        </div>
+      </div>
+      <div class="event-card interactive reveal" data-name="tech quiz">
+        <div class="card-badge interactive-badge">Interactive</div>
+        <h3>Tech Quiz</h3>
+        <p>Battle your teammates in a fast-paced quiz covering technology, science, and general knowledge.</p>
+        <div class="card-footer">
+          <span class="card-tag"> ⏱️ 1.5 hrs</span>
+          <span class="card-tag"> 👥 Prizes</span>
+        </div>
+      </div>
+      <div class="event-card interactive reveal" data-name="innovation pitch">
+        <div class="card-badge interactive-badge">Interactive</div>
+        <h3>Innovation Pitch</h3>
+        <p>Pitch your startup idea to a panel of judges and win mentorship, prizes, and recognition.</p>
+        <div class="card-footer">
+          <span class="card-tag"> ⏱️ 2 hrs</span>
+          <span class="card-tag"> 👥 Prizes</span>
+        </div>
+      </div>
+      <div class="event-card interactive reveal" data-name="problem solving challenge">
+        <div class="card-badge interactive-badge">Interactive</div>
+        <h3>Problem Solving Challenge</h3>
+        <p>Collaborate in teams to crack real-world engineering problems within a time limit.</p>
+        <div class="card-footer">
+          <span class="card-tag"> ⏱️ 3 hrs</span>
+          <span class="card-tag"> 👥 Teams</span>
+        </div>
+      </div>
+    </div>
+    <p class="no-results" id="noResults" style="display:none;">No events found. Try a different search.</p>
+  </div>
+</section>
+<!-- schedule body-->
+<section id="schedule" class="section">
+  <div class="section-inner">
+    <div class="section-tag"> Schedule</div>
+    <h2 class="section-title">Event <span class="accent">Schedule</span></h2>
+    <div class="schedule-tabs reveal">
+      <button class="day-tab active" onclick="switchDay('day1', this)">Day 1 - July 14</button>
+      <button class="day-tab" onclick="switchDay('day2', this)">Day 2 - July 15</button>
+    </div>
+    <div class="timeline" id="day1">
+      <div class="timeline-item reveal">
+        <div class="timeline-time">9:00 AM</div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <h4>Opening Ceremony</h4>
+          <p>Welcome address by IEEE SB Chair, Chief Guest keynote, and event overview.</p>
+          <span class="timeline-tag tag-general">Inauguration</span>
+        </div>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-time">10:00 AM</div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <h4>Web Development Workshop</h4>
+          <p>Hands-on session by industry experts covering modern web technologies.</p>
+          <span class="timeline-tag tag-technical">Technical</span>
+        </div>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-time">1:00 PM</div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <h4>Lunch Break</h4>
+          <p>Networking lunch - a great chance to connect with fellow participants.</p>
+          <span class="timeline-tag tag-break">Break</span>
+        </div>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-time">2:00 PM</div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <h4>Resume Building Workshop</h4>
+          <p>Expert-led session on crafting a standout, ATS-optimized resume.</p>
+          <span class="timeline-tag tag-professional">Professional</span>
+        </div>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-time">4:00 PM</div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <h4>Tech Quiz - Round 1</h4>
+          <p>Qualifying rounds for the inter-college tech quiz competition.</p>
+          <span class="timeline-tag tag-interactive">Interactive</span>
+        </div>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-time">5:30 PM</div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <h4>Day 1 Wrap-up</h4>
+          <p>Summary of Day 1 events, announcements, and networking session.</p>
+          <span class="timeline-tag tag-general">General</span>
+        </div>
+      </div>
+    </div>
+    <div class="timeline hidden" id="day2">
+      <div class="timeline-item reveal">
+        <div class="timeline-time">9:30 AM</div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <h4>AI & ML Session</h4>
+          <p>Deep dive into machine learning concepts with hands-on model building exercises.</p>
+          <span class="timeline-tag tag-technical">Technical</span>
+        </div>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-time">11:00 AM</div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <h4>Coding Challenge</h4>
+          <p>Competitive programming contest with DSA and algorithmic problems.</p>
+          <span class="timeline-tag tag-technical">Technical</span>
+        </div>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-time">1:00 PM</div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <h4>Lunch Break</h4>
+          <p>Networking lunch and quick project showcases by participants.</p>
+          <span class="timeline-tag tag-break">Break</span>
+        </div>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-time">2:00 PM</div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <h4>Innovation Pitch Finals</h4>
+          <p>Top teams present startup ideas to a panel of industry judges.</p>
+          <span class="timeline-tag tag-interactive">Interactive</span>
+        </div>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-time">3:30 PM</div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <h4>Career Guidance Talk</h4>
+          <p>Senior industry professionals share career insights and answer student questions.</p>
+          <span class="timeline-tag tag-professional">Professional</span>
+        </div>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-time">5:00 PM</div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <h4>Closing & Prize Distribution</h4>
+          <p>Felicitation of winners, certificate distribution, and vote of thanks.</p>
+          <span class="timeline-tag tag-general">Closing</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- faq body-->
+<section id="faq" class="section section-dark">
+  <div class="section-inner">
+    <div class="section-tag"> FAQ</div>
+    <h2 class="section-title">Frequently Asked <span class="accent">Questions</span></h2>
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          <span>Who can attend IEEE Ignite 2026?</span>
+        </button>
+        <div class="faq-answer">
+          <p>IEEE Ignite is open to all undergraduate and postgraduate students from any college or university. You don't need to be an IEEE member to participate , everyone passionate about technology is welcome!</p>
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          <span>Is registration free?</span>
+        </button>
+        <div class="faq-answer">
+          <p>Yes! IEEE Ignite 2026 is completely free to attend. There are no registration fees for any of the events. Simply sign up, show up, and ignite your potential.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          <span>Do I need to register for individual events?</span>
+        </button>
+        <div class="faq-answer">
+          <p>After registering for Ignite, you can select specific workshops and sessions. Some events like the Coding Challenge and Innovation Pitch require separate sign-ups due to limited slots &mdash; details will be shared after your main registration.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          <span>Can I participate as a team?</span>
+        </button>
+        <div class="faq-answer">
+          <p>Absolutely! Events like the Innovation Pitch and Problem Solving Challenge are team-based (2&ndash;4 members). You can also bring friends to individual workshops &mdash; the more, the merrier!</p>
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          <span>Will certificates be provided?</span>
+        </button>
+        <div class="faq-answer">
+          <p>Yes! All participants receive IEEE-certified participation certificates. Winners of competitive events will receive merit certificates and exciting prizes during the closing ceremony.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          <span>What should I bring on the event day?</span>
+        </button>
+        <div class="faq-answer">
+          <p>Bring your college ID card, a laptop (for workshops), a notebook, and enthusiasm! For coding events, ensure your laptop has a code editor installed. Lunch will be provided on both days.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          <span>How can I contact the organizers?</span>
+        </button>
+        <div class="faq-answer">
+          <p>Reach us via our official social media channels - Instagram and LinkedIn. For urgent queries, drop a DM or email us at the address shared in your registration confirmation email.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!---footer section-->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo"><span class="logo-ieee">IEEE</span><span class="logo-ignite">Ignite</span></div>
+      <p>IEEE Student Branch . LBSITW . 2026</p>
+    </div>
+    <div class="footer-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#events">Events</a>
+      <a href="#schedule">Schedule</a>
+      <a href="#faq">FAQ</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p> © 2026 IEEE Ignite </p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
