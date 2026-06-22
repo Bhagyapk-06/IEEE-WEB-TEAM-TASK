@@ -26,7 +26,7 @@ This website serves as the official event landing page, showcasing event details
 ---
 
 ##  Project Structure
-IEEE-Ignite-2026/
+IEEE-WEB-TEAM-TASK/
 │
 ├── index.html # Main HTML structure
 ├── style.css # Styling, layout, and responsiveness
@@ -35,7 +35,7 @@ IEEE-Ignite-2026/
 
 ---
 
-## 📄 File Details
+##  File Details
 
 ### index.html
 - Contains the complete page structure
@@ -85,7 +85,7 @@ Handles all dynamic behavior:
 
 1. Clone or download the repository
 2. Open the project folder
-3. Open `index.html` in any browser  
+3. Open **index.html** in any browser  
    **OR**
 4. Run using VS Code Live Server for best experience
 
